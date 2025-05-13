@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antony Ogutu - Cybersecurity Portfolio</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gray: #95a5a6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .contact-info a:hover {
+            color: var(--secondary);
+        }
+        
+        section {
+            padding: 2rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        section:last-child {
+            border-bottom: none;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        h3 {
+            color: var(--secondary);
+            margin: 1rem 0 0.5rem;
+        }
+        
+        .summary {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .skill-category h3 {
+            margin-top: 0;
+        }
+        
+        ul {
+            list-style-position: inside;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-item, .project-item {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .job-title, .project-title {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+        
+        .company, .project-tech {
+            font-weight: bold;
+            color: var(--gray);
+        }
+        
+        .date {
+            color: var(--gray);
+            font-style: italic;
+        }
+        
+        .project-links {
+            margin-top: 1rem;
+        }
+        
+        .project-links a {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-right: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .project-links a:hover {
+            background: var(--primary);
+        }
+        
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .certification {
+            background: white;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .feature {
+            background: #e3f2fd;
+            padding: 0.5rem;
+            border-radius: 3px;
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .job-title, .education-item {
+                flex-direction: column;
+            }
+            
+            .date {
+                margin-top: 0.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Antony Ogutu</h1>
+            <p>Cybersecurity & Digital Forensics Specialist</p>
+            <div class="contact-info">
+                <a href="tel:0748699663">📞 0748699663</a>
+                <a href="mailto:antonyogutuu@gmail.com">📧 antonyogutuu@gmail.com</a>
+                <a href="https://www.linkedin.com/in/antony-ogutu-06b520233/" target="_blank">🌐 LinkedIn</a>
+                <a href="https://github.com/ogutu79" target="_blank">💻 GitHub</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="summary">
+            <h2>Professional Summary</h2>
+            <p class="summary">
+                Proactive and results-driven IT Specialist with expertise in end-user support, ERP administration, and network security. 
+                Skilled in troubleshooting hardware and software issues, maintaining IT infrastructure, and delivering client-centric technical solutions. 
+                Strong background in database management, cybersecurity, and ERP systems support. 
+                Adept at optimizing IT operations and ensuring seamless business continuity through proactive problem-solving and system monitoring.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Cybersecurity</h3>
+                    <ul>
+                        <li>SOC monitoring</li>
+                        <li>Encryption techniques</li>
+                        <li>Snort & Wireshark</li>
+                        <li>Firewall configuration</li>
+                        <li>Incident response</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>IT Support</h3>
+                    <ul>
+                        <li>Helpdesk troubleshooting</li>
+                        <li>Microsoft Dynamics NAV</li>
+                        <li>Hardware/software maintenance</li>
+                        <li>Remote assistance</li>
+                        <li>SLA management</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Programming & Data</h3>
+                    <ul>
+                        <li>Python (TensorFlow, Pandas, Scapy)</li>
+                        <li>SQL & MySQL</li>
+                        <li>Power BI & Excel</li>
+                        <li>PHP, HTML/CSS, JavaScript</li>
+                        <li>Machine Learning</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Networking</h3>
+                    <ul>
+                        <li>CCNA certified</li>
+                        <li>VPN configuration</li>
+                        <li>Wi-Fi & Ethernet</li>
+                        <li>Network troubleshooting</li>
+                        <li>Packet analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="job-title">
+                    <h3>IT Intern</h3>
+                    <span class="date">January 2025 - Present</span>
+                </div>
+                <div class="company">Presidential Digital Talent Program (PDTP) - ICT Authority</div>
+                <ul>
+                    <li>Contributed to KFCB's Business Process Reengineering (BPR) initiative to enhance systems efficiency</li>
+                    <li>Managed Microsoft Dynamics NAV, assisting employees in navigation and troubleshooting</li>
+                    <li>Administered the Technical Management System (TMS) to optimize service delivery</li>
+                    <li>Provided end-user support, resolving hardware, software, and network issues</li>
+                    <li>Performed server administration tasks, ensuring uptime and optimal performance</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="job-title">
+                    <h3>IT Intern</h3>
+                    <span class="date">May 2023 - December 2024</span>
+                </div>
+                <div class="company">County Government of Kisumu</div>
+                <ul>
+                    <li>Managed the MARWA website, ensuring reliable access for health insurance services</li>
+                    <li>Reduced technical downtime by 20% through timely troubleshooting</li>
+                    <li>Designed interactive dashboards using Power BI, improving stakeholder decision-making</li>
+                    <li>Resolved 100+ tickets/month related to hardware, software, and networking</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="job-title">
+                    <h3>Industrial Attachment</h3>
+                    <span class="date">May 2022 - August 2023</span>
+                </div>
+                <div class="company">Kenya Revenue Authority (KRA)</div>
+                <ul>
+                    <li>Enhanced system security by implementing encryption techniques and firewall configurations</li>
+                    <li>Prevented malware attacks through timely updates of antivirus systems</li>
+                    <li>Reviewed and mitigated 50+ security incidents, improving response time by 30%</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            
+            <div class="project-item">
+                <div class="project-title">
+                    <h3>Online Voting System</h3>
+                    <span class="project-tech">PHP, MySQL, XAMPP</span>
+                </div>
+                <ul>
+                    <li>Built a secure web-based voting platform with voter registration and candidate management</li>
+                    <li>Developed real-time results display module</li>
+                    <li>Enhanced security through password hashing and role-based access control</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/ogutu79/online-voting-system" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">
+                    <h3>Python Network Sniffer</h3>
+                    <span class="project-tech">Python, Scapy</span>
+                </div>
+                <ul>
+                    <li>Developed a tool to capture and analyze network traffic in real-time</li>
+                    <li>Provides insights into data flow and packet structures</li>
+                </ul>
+                <div class="features">
+                    <span class="feature">✅ Captures packets in real-time</span>
+                    <span class="feature">✅ Displays Source/Destination IP</span>
+                    <span class="feature">✅ Filters by protocol (TCP/UDP/ICMP)</span>
+                    <span class="feature">✅ Easy to use and extend</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/ogutu79/python-network-sniffer" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-title">
+                    <h3>Hate Speech Identification in Tweets</h3>
+                    <span class="project-tech">Python, TensorFlow, Wireshark</span>
+                </div>
+                <ul>
+                    <li>Developed a machine learning model to identify offensive tweets using TensorFlow and Pandas</li>
+                    <li>Traced offenders' locations with advanced tools like Wireshark and Snort</li>
+                    <li>Aided legal actions by DCI through digital evidence collection</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/ogutu79/hate-speech-detection" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-title">
+                    <h3>Technical Management System (TMS) for KFCB</h3>
+                    <span class="project-tech">Microsoft Dynamics, Power BI</span>
+                </div>
+                <ul>
+                    <li>Optimized IT service delivery by troubleshooting system issues</li>
+                    <li>Reduced downtime by 20% through proactive monitoring</li>
+                    <li>Implemented user training programs for system adoption</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/ogutu79/kfcb-tms" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <div>
+                    <h3>BSc. Computer Security and Forensics</h3>
+                    <div>Meru University of Science and Technology</div>
+                </div>
+                <div class="date">2019 - 2023 | 2nd Upper</div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="certifications">
+                <div class="certification">
+                    <h3>Cisco Certified Network Associate (CCNA)</h3>
+                </div>
+                <div class="certification">
+                    <h3>Security Analyst Specialist</h3>
+                    <div>Cyber Shujaa</div>
+                </div>
+                <div class="certification">
+                    <h3>CIPITS Data Protection</h3>
+                    <div>Strathmore University</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Antony Ogutu | Cybersecurity & Digital Forensics Specialist</p>
+            <p>Explore more projects on <a href="https://github.com/ogutu79" target="_blank" style="color: var(--secondary);">GitHub</a> | References available upon request</p>
+        </div>
+    </footer>
+</body>
+</html>
